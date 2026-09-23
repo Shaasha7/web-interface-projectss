@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Elite Counter Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="background-shape shape1"></div>
+<div class="background-shape shape2"></div>
+<header>
+<h1>⚡ ELITE COUNTER PRO</h1>
+<p>
+Next Generation Smart Counter Dashboard
+</p>
+</header>
+<main class="dashboard">
+<section class="counter-panel">
+<div class="circle" id="circle">
+<div class="count-box">
+<span id="count">0</span>
+</div>
+</div>
+<h2>
+LIVE COUNTER
+</h2>
+<input 
+id="step"
+type="number"
+value="1">
+<p>
+Increment Value
+</p>
+<div class="buttons">
+<button class="plus"
+onclick="increase()">
++ ADD
+</button>
+<button class="minus"
+onclick="decrease()">
+</button>
+<button class="reset"
+onclick="resetCounter()">
+RESET
+</button>
+</div>
+</section >
+<section class="analytics">
+<div class="card">
+<h3>⏰ Current Time</h3>
+<p id="time"></p>
+</div>
+<div class="card">
+<h3>⌨ Shortcuts</h3>
+<p>
++ Add<br>
+- Remove<br>
+R Reset
+</p>
+</div>
+<div class="card history">
+<h3>
+📊 Activity History
+</h3>
+<div id="history">
+No Activity
+</div>
+</div>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
