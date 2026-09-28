@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0b0d17;
+  --bg-2: #12152a;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #eef0ff;
+  --text-dim: #9aa0c3;
+  --accent: #7c5cff;
+  --accent-2: #22d3ee;
+  --grad: linear-gradient(135deg, #7c5cff 0%, #22d3ee 100%);
+  --high: #ff5c8a;
+  --medium: #ffb547;
+  --low: #3ddc97;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --radius: 18px;
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #f3f4fb;
+  --bg-2: #e7e9f7;
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-2: rgba(255, 255, 255, 0.95);
+  --border: rgba(20, 24, 60, 0.1);
+  --text: #171a33;
+  --text-dim: #5d6384;
+  --shadow: 0 20px 50px rgba(40, 45, 110, 0.15);
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
