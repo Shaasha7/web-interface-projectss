@@ -1,0 +1,389 @@
+
+/* ================================
+   GLOBAL STYLES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.18), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.18), transparent 30%),
+        linear-gradient(135deg, #0f172a, #111827 50%, #1e1b4b);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    color: #ffffff;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+
+    text-align: center;
+}
+
+
+/* ================================
+   PAGE TITLE
+================================ */
+
+h1 {
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 35px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #c7d2fe,
+        #e9d5ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ================================
+   STUDENT CARD CONTAINER
+================================ */
+
+#studentCard {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ================================
+   STUDENT CARD
+================================ */
+
+.card {
+    position: relative;
+
+    width: 360px;
+
+    padding: 35px 30px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* ================================
+   CARD GLOW
+================================ */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -70px;
+
+    background: #6366f1;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: 0.35;
+
+    transition: 0.4s ease;
+}
+
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    bottom: -70px;
+    left: -50px;
+
+    background: #a855f7;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: 0.25;
+}
+
+
+/* ================================
+   HOVER EFFECT
+================================ */
+
+.card:hover {
+    transform: translateY(-12px);
+
+    border-color: rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(99, 102, 241, 0.12);
+}
+
+
+.card:hover::before {
+    opacity: 0.55;
+}
+
+
+/* ================================
+   PROFILE IMAGE
+================================ */
+
+.profile-img {
+    position: relative;
+
+    width: 125px;
+    height: 125px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid rgba(255, 255, 255, 0.8);
+
+    padding: 4px;
+
+    background:
+        linear-gradient(#111827, #111827) padding-box,
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #a855f7,
+            #ec4899
+        ) border-box;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+
+    margin-bottom: 20px;
+
+    transition: transform 0.4s ease;
+}
+
+
+.card:hover .profile-img {
+    transform: scale(1.06);
+}
+
+
+/* ================================
+   STUDENT NAME
+================================ */
+
+.card h2 {
+    position: relative;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* ================================
+   DEPARTMENT
+================================ */
+
+.card .role {
+    display: inline-block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    color: #c4b5fd;
+
+    background: rgba(139, 92, 246, 0.12);
+
+    border: 1px solid rgba(167, 139, 250, 0.2);
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   DETAILS BOX
+================================ */
+
+.details {
+    position: relative;
+
+    text-align: left;
+
+    background: rgba(0, 0, 0, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    margin-top: 5px;
+}
+
+
+/* ================================
+   DETAIL ROW
+================================ */
+
+.details p {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 12px 0;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.details p:last-child {
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+
+.details p:first-child {
+    padding-top: 0;
+}
+
+
+/* ================================
+   DETAIL LABEL
+================================ */
+
+.details strong {
+    color: #94a3b8;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* ================================
+   DETAIL VALUE
+================================ */
+
+.details p {
+    color: #e2e8f0;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+
+        margin-bottom: 25px;
+    }
+
+    .card {
+        width: 100%;
+
+        max-width: 360px;
+
+        padding: 30px 22px;
+    }
+
+    .profile-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+    .details p {
+        font-size: 13px;
+    }
+}
